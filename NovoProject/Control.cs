@@ -12,7 +12,7 @@ namespace NovoProject
         private SqlConnection conex;
         public Control()
         {
-            conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
+            //String Gabriel//conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         }
         public DataTable selectMarca()
