@@ -41,15 +41,12 @@ namespace NovoProject
             control.selectProduto();
             feed();
             reloadGrid();
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             control.insertProduto(textBox1.Text,Convert.ToDecimal(textBox2.Text),Convert.ToInt32(table.Rows[comboBox1.SelectedIndex][0].ToString()));
             dataGridView1.DataSource = control.selectProd();
-
-
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

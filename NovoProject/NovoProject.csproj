@@ -75,6 +75,9 @@
     <EmbeddedResource Include="cadastro_loja.resx">
       <DependentUpon>cadastro_loja.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="cadastro_marca.resx">
+      <DependentUpon>cadastro_marca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="cadastro_produto.resx">
       <DependentUpon>cadastro_produto.cs</DependentUpon>
     </EmbeddedResource>
