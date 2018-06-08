@@ -15,6 +15,7 @@ namespace NovoProject
         public cadastro_marca()
         {
             InitializeComponent();
+            //laranja
         }
     }
 }
