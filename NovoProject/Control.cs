@@ -9,6 +9,7 @@ namespace NovoProject
 {
     class Control
     {
+        //comment legal
         private SqlConnection conex;
         public Control()
         {
