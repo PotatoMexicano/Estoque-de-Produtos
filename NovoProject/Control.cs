@@ -9,7 +9,6 @@ namespace NovoProject
 {
     class Control
     {
-        //comment legal
         private SqlConnection conex;
         public Control()
         {
@@ -67,10 +66,5 @@ namespace NovoProject
             adptor.Fill(table);
             return table;
         }
-
     }
 }
-
-
-//batata
-//ola mundo
