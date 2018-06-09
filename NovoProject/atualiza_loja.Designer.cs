@@ -65,7 +65,7 @@
             // gridAttLoja
             // 
             this.gridAttLoja.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridAttLoja.Location = new System.Drawing.Point(213, 12);
+            this.gridAttLoja.Location = new System.Drawing.Point(256, 12);
             this.gridAttLoja.Name = "gridAttLoja";
             this.gridAttLoja.Size = new System.Drawing.Size(346, 426);
             this.gridAttLoja.TabIndex = 4;
