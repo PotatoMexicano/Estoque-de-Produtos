@@ -129,19 +129,20 @@
             // marcaToolStripMenuItem2
             // 
             this.marcaToolStripMenuItem2.Name = "marcaToolStripMenuItem2";
-            this.marcaToolStripMenuItem2.Size = new System.Drawing.Size(117, 22);
+            this.marcaToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.marcaToolStripMenuItem2.Text = "Marca";
             // 
             // produtoToolStripMenuItem2
             // 
             this.produtoToolStripMenuItem2.Name = "produtoToolStripMenuItem2";
-            this.produtoToolStripMenuItem2.Size = new System.Drawing.Size(117, 22);
+            this.produtoToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.produtoToolStripMenuItem2.Text = "Produto";
+            this.produtoToolStripMenuItem2.Click += new System.EventHandler(this.produtoToolStripMenuItem2_Click);
             // 
             // lojaToolStripMenuItem2
             // 
             this.lojaToolStripMenuItem2.Name = "lojaToolStripMenuItem2";
-            this.lojaToolStripMenuItem2.Size = new System.Drawing.Size(117, 22);
+            this.lojaToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.lojaToolStripMenuItem2.Text = "Loja";
             // 
             // Form1

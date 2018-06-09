@@ -48,5 +48,13 @@ namespace NovoProject
             new cadastro_produto().ShowDialog();
             this.Visible = true;
         }
+
+        private void produtoToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new update_produto().ShowDialog();
+            this.Visible = true;
+
+        }
     }
 }
