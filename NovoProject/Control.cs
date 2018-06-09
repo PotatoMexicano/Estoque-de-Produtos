@@ -12,11 +12,11 @@ namespace NovoProject
         private SqlConnection conex;
         public Control()
         {
-            //String Gabriel         conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
-            //String Kami//conex = new SqlConnection("@Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Pichau\Documents\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
+            //String Gabriel//conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
+            /*String Kami*/
+            conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Pichau\Documents\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         }
-        //Select's
         public DataTable selectMarca()
         {
             SqlDataAdapter adptor = new SqlDataAdapter("select * from marca ", conex);
@@ -25,37 +25,6 @@ namespace NovoProject
 
             return table;
         }
-        public DataTable selectLoja()
-        {
-            SqlDataAdapter adptor = new SqlDataAdapter("select * from Loja ", conex);
-            DataTable table = new DataTable();
-            adptor.Fill(table);
-            return table;
-        }
-        public DataTable feedCombo()
-        {
-            SqlDataAdapter adptor = new SqlDataAdapter("select * from marca", conex);
-            DataTable table = new DataTable();
-            adptor.Fill(table);
-            return table;
-        }
-        public DataTable selectProd()
-        {
-            SqlDataAdapter adptor = new SqlDataAdapter("select descricao,preco,nome,prod.codMarca from produto as prod join marca as marc on prod.codMarca = marc.codMarca", conex);
-            DataTable table = new DataTable();
-            adptor.Fill(table);
-            return table;
-        }
-        public DataTable selectProduto()
-        {
-            SqlDataAdapter adptor = new SqlDataAdapter("select descricao,preco,nome,prod.codProduto,prod.codMarca from produto as prod join marca as marc on prod.codMarca = marc.codMarca ", conex);
-            DataTable table = new DataTable();
-            adptor.Fill(table);
-            return table;
-        }
-
-        //Insert's
-
         public void insertMarca(string nome)
         {
             SqlCommand add = new SqlCommand();
@@ -65,7 +34,14 @@ namespace NovoProject
             conex.Open();
             add.ExecuteNonQuery();
             conex.Close();
-        }        
+        }
+        public DataTable selectLoja()
+        {
+            SqlDataAdapter adptor = new SqlDataAdapter("select * from Loja ",conex);
+            DataTable table = new DataTable();
+            adptor.Fill(table);
+            return table;
+        }
         public void insertLoja(string nome,string cidade)
         {
             SqlCommand add = new SqlCommand();
@@ -76,6 +52,13 @@ namespace NovoProject
             conex.Open();
             add.ExecuteNonQuery();
             conex.Close();
+        }
+        public DataTable selectProduto()
+        {
+            SqlDataAdapter adptor = new SqlDataAdapter("select descricao,preco,nome from produto as prod join marca as marc on prod.codMarca = marc.codMarca ", conex);
+            DataTable table = new DataTable();
+            adptor.Fill(table);
+            return table;
         }
         public void insertProduto(string descriçao,decimal preço,int marca)
         {
@@ -89,7 +72,40 @@ namespace NovoProject
             add.ExecuteNonQuery();
             conex.Close();
         }
-        
+        public DataTable feedCombo()
+        {
+            SqlDataAdapter adptor = new SqlDataAdapter("select * from marca", conex);
+            DataTable table = new DataTable();
+            adptor.Fill(table);
+            return table;
+        }
+        public DataTable selectProd()
+        {
+            SqlDataAdapter adptor = new SqlDataAdapter("select descricao,preco,nome from produto as prod join marca as marc on prod.codMarca = marc.codMarca", conex);
+            DataTable table = new DataTable();
+            adptor.Fill(table);
+            return table;
+        }
+
+        public DataTable updateLoja(string New, string cidade, string nome)
+        {
+            SqlCommand att = new SqlCommand();
+            att.Connection = conex;
+            att.Parameters.Add("@new", SqlDbType.VarChar).Value = New;
+            att.Parameters.Add("@cidade", SqlDbType.VarChar).Value = cidade;
+            att.Parameters.Add("@nome", SqlDbType.VarChar).Value = nome;
+            att.CommandText = "update Loja set nome = @new, cidade = @cidade where nome = @nome";
+
+            conex.Open();
+            att.ExecuteNonQuery();
+            conex.Close();
+
+            SqlDataAdapter adptor = new SqlDataAdapter("select * from Loja", conex);
+            DataTable table = new DataTable();
+            adptor.Fill(table);
+
+            return table;
+        }
 
     }
 }

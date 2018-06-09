@@ -1,6 +1,6 @@
 ﻿namespace NovoProject
 {
-    partial class cadastro_loja
+    partial class atualiza_loja
     {
         /// <summary>
         /// Required designer variable.
@@ -28,55 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gridAddLoja = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.gridAttLoja = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.gridAddLoja)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.gridAttLoja)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gridAddLoja
-            // 
-            this.gridAddLoja.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridAddLoja.Location = new System.Drawing.Point(256, 12);
-            this.gridAddLoja.Name = "gridAddLoja";
-            this.gridAddLoja.Size = new System.Drawing.Size(346, 426);
-            this.gridAddLoja.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(55, 203);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Cadastrar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(74, 49);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 2;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(74, 92);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(121, 20);
-            this.textBox2.TabIndex = 3;
+            this.textBox2.TabIndex = 7;
             // 
-            // label1
+            // textBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Loja";
+            this.textBox1.Location = new System.Drawing.Point(74, 49);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(121, 20);
+            this.textBox1.TabIndex = 6;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(55, 203);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Atualizar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // gridAttLoja
+            // 
+            this.gridAttLoja.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridAttLoja.Location = new System.Drawing.Point(256, 12);
+            this.gridAttLoja.Name = "gridAttLoja";
+            this.gridAttLoja.Size = new System.Drawing.Size(346, 426);
+            this.gridAttLoja.TabIndex = 4;
+            this.gridAttLoja.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridAttLoja_CellClick);
             // 
             // label2
             // 
@@ -84,10 +76,19 @@
             this.label2.Location = new System.Drawing.Point(21, 99);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 5;
+            this.label2.TabIndex = 9;
             this.label2.Text = "Cidade";
             // 
-            // cadastro_loja
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(27, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Loja";
+            // 
+            // atualiza_loja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -97,11 +98,11 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.gridAddLoja);
-            this.Name = "cadastro_loja";
-            this.Text = "\'";
-            this.Load += new System.EventHandler(this.cadastro_loja_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridAddLoja)).EndInit();
+            this.Controls.Add(this.gridAttLoja);
+            this.Name = "atualiza_loja";
+            this.Text = "atualiza_loja";
+            this.Load += new System.EventHandler(this.atualiza_loja_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gridAttLoja)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,11 +110,11 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView gridAddLoja;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView gridAttLoja;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
