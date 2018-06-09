@@ -14,7 +14,6 @@ namespace NovoProject
     {
         Control control = new Control();
         DataTable table;
-        DataTable tableCombo;
         public cadastro_produto()
         {
             InitializeComponent();
@@ -22,9 +21,9 @@ namespace NovoProject
         }
         private void feed()
         {
-            tableCombo = control.feedCombo();
-            comboBox1.DataSource = tableCombo;
-            comboBox1.DisplayMember = tableCombo.Columns[1].ColumnName;
+            table = control.feedCombo();
+            comboBox1.DataSource = table;
+            comboBox1.DisplayMember = table.Columns[1].ColumnName;
             comboBox1.ValueMember = "codMarca";
         }
         public void reloadGrid()
@@ -46,7 +45,7 @@ namespace NovoProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            control.insertProduto(textBox1.Text,Convert.ToDecimal(textBox2.Text),Convert.ToInt32(tableCombo.Rows[comboBox1.SelectedIndex][0].ToString()));
+            control.insertProduto(textBox1.Text,Convert.ToDecimal(textBox2.Text),Convert.ToInt32(table.Rows[comboBox1.SelectedIndex][0].ToString()));
             dataGridView1.DataSource = control.selectProd();
         }
 

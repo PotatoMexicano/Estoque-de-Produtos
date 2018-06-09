@@ -15,6 +15,24 @@ namespace NovoProject
             conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         }
+        public DataTable selectMarca()
+        {
+            SqlDataAdapter adptor = new SqlDataAdapter("select * from marca ", conex);
+            DataTable table = new DataTable();
+            adptor.Fill(table);
+
+            return table;
+        }
+        public void insertMarca(string nome)
+        {
+            SqlCommand add = new SqlCommand();
+            add.Connection = conex;
+            add.Parameters.Add("@nome", SqlDbType.VarChar).Value = nome;
+            add.CommandText = "insert into marca values(@nome)";
+            conex.Open();
+            add.ExecuteNonQuery();
+            conex.Close();
+        }
         public DataTable selectLoja()
         {
             SqlDataAdapter adptor = new SqlDataAdapter("select * from Loja ",conex);
@@ -66,5 +84,8 @@ namespace NovoProject
             adptor.Fill(table);
             return table;
         }
+
     }
 }
+//batata
+
