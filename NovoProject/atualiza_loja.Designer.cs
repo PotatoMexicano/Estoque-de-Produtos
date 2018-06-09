@@ -39,21 +39,22 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(74, 92);
+            this.textBox2.Location = new System.Drawing.Point(65, 63);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(121, 20);
             this.textBox2.TabIndex = 7;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(74, 49);
+            this.textBox1.Location = new System.Drawing.Point(65, 20);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(121, 20);
             this.textBox1.TabIndex = 6;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(55, 203);
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(56, 121);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 5;
@@ -64,7 +65,7 @@
             // gridAttLoja
             // 
             this.gridAttLoja.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridAttLoja.Location = new System.Drawing.Point(256, 12);
+            this.gridAttLoja.Location = new System.Drawing.Point(213, 12);
             this.gridAttLoja.Name = "gridAttLoja";
             this.gridAttLoja.Size = new System.Drawing.Size(346, 426);
             this.gridAttLoja.TabIndex = 4;
@@ -73,7 +74,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 99);
+            this.label2.Location = new System.Drawing.Point(12, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 9;
@@ -82,7 +83,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 52);
+            this.label1.Location = new System.Drawing.Point(12, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(27, 13);
             this.label1.TabIndex = 8;
@@ -99,8 +100,10 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.gridAttLoja);
+            this.MaximumSize = new System.Drawing.Size(630, 489);
+            this.MinimumSize = new System.Drawing.Size(630, 489);
             this.Name = "atualiza_loja";
-            this.Text = "atualiza_loja";
+            this.Text = "Atualiza Loja";
             this.Load += new System.EventHandler(this.atualiza_loja_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridAttLoja)).EndInit();
             this.ResumeLayout(false);
