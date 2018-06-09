@@ -40,14 +40,15 @@
             // gridAddLoja
             // 
             this.gridAddLoja.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridAddLoja.Location = new System.Drawing.Point(256, 12);
+            this.gridAddLoja.Location = new System.Drawing.Point(218, 12);
             this.gridAddLoja.Name = "gridAddLoja";
             this.gridAddLoja.Size = new System.Drawing.Size(346, 426);
             this.gridAddLoja.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(55, 203);
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(54, 113);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -57,14 +58,14 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(74, 49);
+            this.textBox1.Location = new System.Drawing.Point(65, 18);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(121, 20);
             this.textBox1.TabIndex = 2;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(74, 92);
+            this.textBox2.Location = new System.Drawing.Point(65, 61);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(121, 20);
             this.textBox2.TabIndex = 3;
@@ -72,7 +73,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 52);
+            this.label1.Location = new System.Drawing.Point(12, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(27, 13);
             this.label1.TabIndex = 4;
@@ -81,7 +82,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 99);
+            this.label2.Location = new System.Drawing.Point(12, 68);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 5;
@@ -91,15 +92,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(614, 450);
+            this.ClientSize = new System.Drawing.Size(581, 450);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.gridAddLoja);
+            this.MaximumSize = new System.Drawing.Size(597, 489);
+            this.MinimumSize = new System.Drawing.Size(597, 489);
             this.Name = "cadastro_loja";
-            this.Text = "\'";
+            this.Text = "Cadastro Loja";
             this.Load += new System.EventHandler(this.cadastro_loja_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridAddLoja)).EndInit();
             this.ResumeLayout(false);
