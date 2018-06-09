@@ -12,9 +12,9 @@ namespace NovoProject
         private SqlConnection conex;
         public Control()
         {
-            //String Gabriel//conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
-            /*String Kami*/
-            conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Pichau\Documents\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
+            //String Gabriel//
+            conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
+            //String Kami            conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Pichau\Documents\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         }
         public DataTable selectMarca()
@@ -55,7 +55,7 @@ namespace NovoProject
         }
         public DataTable selectProduto()
         {
-            SqlDataAdapter adptor = new SqlDataAdapter("select descricao,preco,nome from produto as prod join marca as marc on prod.codMarca = marc.codMarca ", conex);
+            SqlDataAdapter adptor = new SqlDataAdapter("select descricao,preco,nome,prod.codProduto,prod.codMarca from produto as prod join marca as marc on prod.codMarca = marc.codMarca ", conex);
             DataTable table = new DataTable();
             adptor.Fill(table);
             return table;

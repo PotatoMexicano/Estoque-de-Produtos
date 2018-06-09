@@ -51,6 +51,12 @@
     <Compile Include="atualiza_loja.Designer.cs">
       <DependentUpon>atualiza_loja.cs</DependentUpon>
     </Compile>
+    <Compile Include="atualiza_produto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="atualiza_produto.Designer.cs">
+      <DependentUpon>atualiza_produto.cs</DependentUpon>
+    </Compile>
     <Compile Include="cadastro_loja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="atualiza_loja.resx">
       <DependentUpon>atualiza_loja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="atualiza_produto.resx">
+      <DependentUpon>atualiza_produto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="cadastro_loja.resx">
       <DependentUpon>cadastro_loja.cs</DependentUpon>
