@@ -13,7 +13,7 @@ namespace NovoProject
         public Control()
         {
             //String Gabriel//
-            conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
+            conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\C#\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
             //String Kami            conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Pichau\Documents\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         }
