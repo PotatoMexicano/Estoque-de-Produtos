@@ -101,20 +101,21 @@
             // lojaToolStripMenuItem1
             // 
             this.lojaToolStripMenuItem1.Name = "lojaToolStripMenuItem1";
-            this.lojaToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
+            this.lojaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.lojaToolStripMenuItem1.Text = "Loja";
             // 
             // marcaToolStripMenuItem1
             // 
             this.marcaToolStripMenuItem1.Name = "marcaToolStripMenuItem1";
-            this.marcaToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
+            this.marcaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.marcaToolStripMenuItem1.Text = "Marca";
             // 
             // produtoToolStripMenuItem1
             // 
             this.produtoToolStripMenuItem1.Name = "produtoToolStripMenuItem1";
-            this.produtoToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
+            this.produtoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.produtoToolStripMenuItem1.Text = "Produto";
+            this.produtoToolStripMenuItem1.Click += new System.EventHandler(this.produtoToolStripMenuItem1_Click);
             // 
             // atualizarToolStripMenuItem
             // 
@@ -129,20 +130,20 @@
             // marcaToolStripMenuItem2
             // 
             this.marcaToolStripMenuItem2.Name = "marcaToolStripMenuItem2";
-            this.marcaToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.marcaToolStripMenuItem2.Size = new System.Drawing.Size(117, 22);
             this.marcaToolStripMenuItem2.Text = "Marca";
             // 
             // produtoToolStripMenuItem2
             // 
             this.produtoToolStripMenuItem2.Name = "produtoToolStripMenuItem2";
-            this.produtoToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.produtoToolStripMenuItem2.Size = new System.Drawing.Size(117, 22);
             this.produtoToolStripMenuItem2.Text = "Produto";
             this.produtoToolStripMenuItem2.Click += new System.EventHandler(this.produtoToolStripMenuItem2_Click);
             // 
             // lojaToolStripMenuItem2
             // 
             this.lojaToolStripMenuItem2.Name = "lojaToolStripMenuItem2";
-            this.lojaToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.lojaToolStripMenuItem2.Size = new System.Drawing.Size(117, 22);
             this.lojaToolStripMenuItem2.Text = "Loja";
             this.lojaToolStripMenuItem2.Click += new System.EventHandler(this.lojaToolStripMenuItem2_Click);
             // 

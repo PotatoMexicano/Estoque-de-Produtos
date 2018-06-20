@@ -62,5 +62,12 @@ namespace NovoProject
             new atualiza_produto().ShowDialog();
             this.Visible = true;
         }
+
+        private void produtoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new delete_produto().ShowDialog();
+            this.Visible = true;
+        }
     }
 }
