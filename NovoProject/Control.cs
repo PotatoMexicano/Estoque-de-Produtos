@@ -18,17 +18,9 @@ namespace NovoProject
 
         }
 
-        public void delete_prod(int chave)
-        {
-            SqlCommand add = new SqlCommand();
-            add.Connection = conex;
-            add.Parameters.Add("@chave", SqlDbType.Int).Value = chave;
-            add.CommandText = "delete from produto where codProduto = @chave";
-            conex.Open();
-            add.ExecuteNonQuery();
-            conex.Close();
-        }
+        
 
+        //marca
         public DataTable selectMarca()
         {
             SqlDataAdapter adptor = new SqlDataAdapter("select * from marca ", conex);
@@ -47,6 +39,8 @@ namespace NovoProject
             add.ExecuteNonQuery();
             conex.Close();
         }
+
+        //loja
         public DataTable selectLoja()
         {
             SqlDataAdapter adptor = new SqlDataAdapter("select * from Loja ",conex);
@@ -65,40 +59,6 @@ namespace NovoProject
             add.ExecuteNonQuery();
             conex.Close();
         }
-        public DataTable selectProduto()
-        {
-            SqlDataAdapter adptor = new SqlDataAdapter("select descricao,preco,nome,prod.codProduto,prod.codMarca from produto as prod join marca as marc on prod.codMarca = marc.codMarca ", conex);
-            DataTable table = new DataTable();
-            adptor.Fill(table);
-            return table;
-        }
-        public void insertProduto(string descriçao,decimal preço,int marca)
-        {
-            SqlCommand add = new SqlCommand();
-            add.Connection = conex;
-            add.Parameters.Add("@descriçao", SqlDbType.VarChar).Value = descriçao;
-            add.Parameters.Add("@preco", SqlDbType.Decimal).Value = preço;
-            add.Parameters.Add("@marca", SqlDbType.Int).Value = marca; 
-            add.CommandText = "insert into produto values(@descriçao,@preco,@marca)";
-            conex.Open();
-            add.ExecuteNonQuery();
-            conex.Close();
-        }
-        public DataTable feedCombo()
-        {
-            SqlDataAdapter adptor = new SqlDataAdapter("select * from marca", conex);
-            DataTable table = new DataTable();
-            adptor.Fill(table);
-            return table;
-        }
-        public DataTable selectProd()
-        {
-            SqlDataAdapter adptor = new SqlDataAdapter("select descricao,preco,nome from produto as prod join marca as marc on prod.codMarca = marc.codMarca", conex);
-            DataTable table = new DataTable();
-            adptor.Fill(table);
-            return table;
-        }
-
         public DataTable updateLoja(string New, string cidade, string nome)
         {
             SqlCommand att = new SqlCommand();
@@ -118,6 +78,77 @@ namespace NovoProject
 
             return table;
         }
+
+        //produto
+        public DataTable selectProduto()
+        {
+            SqlDataAdapter adptor = new SqlDataAdapter("select descricao,preco,nome,prod.codProduto,prod.codMarca from produto as prod join marca as marc on prod.codMarca = marc.codMarca ", conex);
+            DataTable table = new DataTable();
+            adptor.Fill(table);
+            return table;
+        }
+        public DataTable selectProd()
+        {
+            SqlDataAdapter adptor = new SqlDataAdapter("select descricao,preco,nome from produto as prod join marca as marc on prod.codMarca = marc.codMarca", conex);
+            DataTable table = new DataTable();
+            adptor.Fill(table);
+            return table;
+        }
+        public void insertProduto(string descriçao,decimal preço,int marca)
+        {
+            SqlCommand add = new SqlCommand();
+            add.Connection = conex;
+            add.Parameters.Add("@descriçao", SqlDbType.VarChar).Value = descriçao;
+            add.Parameters.Add("@preco", SqlDbType.Decimal).Value = preço;
+            add.Parameters.Add("@marca", SqlDbType.Int).Value = marca; 
+            add.CommandText = "insert into produto values(@descriçao,@preco,@marca)";
+            conex.Open();
+            add.ExecuteNonQuery();
+            conex.Close();
+        }
+        public DataTable updateProduto(int codigo, string nome, decimal preco, int marca)
+        {
+            SqlCommand att = new SqlCommand();
+            att.Connection = conex;
+            att.Parameters.Add("@codigo", SqlDbType.Int).Value =codigo ;
+            att.Parameters.Add("@nome", SqlDbType.VarChar).Value = nome;
+            att.Parameters.Add("@preco", SqlDbType.Decimal).Value = preco;
+            att.Parameters.Add("@marca", SqlDbType.Int).Value = marca;
+
+            att.CommandText = "update Loja set nome = @new, cidade = @cidade where nome = @nome";
+
+            conex.Open();
+            att.ExecuteNonQuery();
+            conex.Close();
+
+            SqlDataAdapter adptor = new SqlDataAdapter("select * from Loja", conex);
+            DataTable table = new DataTable();
+            adptor.Fill(table);
+
+            return table;
+        }
+        public void delete_prod(int chave)
+        {
+            SqlCommand add = new SqlCommand();
+            add.Connection = conex;
+            add.Parameters.Add("@chave", SqlDbType.Int).Value = chave;
+            add.CommandText = "delete from produto where codProduto = @chave";
+            conex.Open();
+            add.ExecuteNonQuery();
+            conex.Close();
+        }
+
+        //universal
+        public DataTable feedCombo()
+        {
+            SqlDataAdapter adptor = new SqlDataAdapter("select * from marca", conex);
+            DataTable table = new DataTable();
+            adptor.Fill(table);
+            return table;
+        }
+       
+
+        
 
     }
 }
