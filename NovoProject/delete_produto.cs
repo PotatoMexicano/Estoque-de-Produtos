@@ -42,6 +42,7 @@ namespace NovoProject
 
                 control.delete_prod(Int32.Parse(listBox1.SelectedValue.ToString()));
                 listBox1.DataSource = control.selectProduto();
+                checkBox1.Checked = false;
             }
             else
             {
