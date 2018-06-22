@@ -13,7 +13,7 @@ namespace NovoProject
         public Control()
         {
             //String Gabriel//
-            conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\16025\Desktop\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
+            conex = new SqlConnection(@"");
             //String Kami            conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Pichau\Documents\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         }
@@ -40,6 +40,17 @@ namespace NovoProject
             conex.Close();
         }
 
+
+        public void delete_marca(int pinto)
+        {
+            SqlCommand add1 = new SqlCommand();
+            add1.Connection = conex;
+            add1.Parameters.Add("@pinto", SqlDbType.Int).Value = pinto;
+            add1.CommandText = "delete from marca where codMarca = @pinto";
+            conex.Open();
+            add1.ExecuteNonQuery();
+            conex.Close();
+        }
         //loja
         public DataTable selectLoja()
         {
@@ -77,6 +88,17 @@ namespace NovoProject
             adptor.Fill(table);
 
             return table;
+        }
+
+        public void deleta_loja(int key)
+        {
+            SqlCommand add = new SqlCommand();
+            add.Connection = conex;
+            add.Parameters.Add("@key", SqlDbType.Int).Value = key;
+            add.CommandText = "delete from Loja where codLoja = @key";
+            conex.Open();
+            add.ExecuteNonQuery();
+            conex.Close();
         }
 
         //produto

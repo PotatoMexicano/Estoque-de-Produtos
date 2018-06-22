@@ -76,6 +76,18 @@
       <DependentUpon>cadastro_produto.cs</DependentUpon>
     </Compile>
     <Compile Include="Control.cs" />
+    <Compile Include="delete_loja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="delete_loja.Designer.cs">
+      <DependentUpon>delete_loja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="delete_marca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="delete_marca.Designer.cs">
+      <DependentUpon>delete_marca.cs</DependentUpon>
+    </Compile>
     <Compile Include="delete_produto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +116,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="cadastro_produto.resx">
       <DependentUpon>cadastro_produto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="delete_loja.resx">
+      <DependentUpon>delete_loja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="delete_marca.resx">
+      <DependentUpon>delete_marca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="delete_produto.resx">
       <DependentUpon>delete_produto.cs</DependentUpon>

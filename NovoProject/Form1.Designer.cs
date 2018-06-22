@@ -103,12 +103,14 @@
             this.lojaToolStripMenuItem1.Name = "lojaToolStripMenuItem1";
             this.lojaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.lojaToolStripMenuItem1.Text = "Loja";
+            this.lojaToolStripMenuItem1.Click += new System.EventHandler(this.lojaToolStripMenuItem1_Click);
             // 
             // marcaToolStripMenuItem1
             // 
             this.marcaToolStripMenuItem1.Name = "marcaToolStripMenuItem1";
             this.marcaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.marcaToolStripMenuItem1.Text = "Marca";
+            this.marcaToolStripMenuItem1.Click += new System.EventHandler(this.marcaToolStripMenuItem1_Click);
             // 
             // produtoToolStripMenuItem1
             // 
