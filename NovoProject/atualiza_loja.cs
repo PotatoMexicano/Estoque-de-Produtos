@@ -13,6 +13,7 @@ namespace NovoProject
     public partial class atualiza_loja : Form
     {
         Control control = new Control();
+        int cod;
         public atualiza_loja()
         {
             InitializeComponent();
@@ -29,13 +30,15 @@ namespace NovoProject
 
         private void gridAttLoja_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-                textBox1.Text = gridAttLoja.Rows[e.RowIndex].Cells[1].Value.ToString();
-                textBox2.Text = gridAttLoja.Rows[e.RowIndex].Cells[2].Value.ToString();
+            cod = Convert.ToInt32(gridAttLoja.Rows[e.RowIndex].Cells[0].Value);
+            textBox1.Text = gridAttLoja.Rows[e.RowIndex].Cells[1].Value.ToString();
+            textBox2.Text = gridAttLoja.Rows[e.RowIndex].Cells[2].Value.ToString();
+            MessageBox.Show(cod.ToString());
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            gridAttLoja.DataSource = control.updateLoja(textBox1.Text, textBox2.Text, gridAttLoja.SelectedCells[0].Value.ToString());
+            gridAttLoja.DataSource = control.updateLoja(cod, textBox1.Text, textBox2.Text, gridAttLoja.SelectedCells[0].Value.ToString());
             gridAttLoja.Columns[0].Visible = false;
             gridAttLoja.Columns[1].HeaderText = "Nome";
             gridAttLoja.Columns[2].HeaderText = "Cidade";

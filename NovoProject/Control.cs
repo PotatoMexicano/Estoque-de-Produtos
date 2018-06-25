@@ -13,8 +13,9 @@ namespace NovoProject
         public Control()
         {
             //String Gabriel//  conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
-            //String Kami//     conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Pichau\Documents\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
+            //String Kami//
             conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Pichau\Documents\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
+            //conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Pichau\Documents\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         }
 
@@ -39,14 +40,21 @@ namespace NovoProject
             add.ExecuteNonQuery();
             conex.Close();
         }
+        public void updateMarca(string nome, int cod)
+        {
+            SqlCommand att = new SqlCommand();
+            att.Connection = conex;
+            att.Parameters.Add("@nome", SqlDbType.VarChar).Value = nome;
+            att.Parameters.Add("@cod", SqlDbType.Int).Value = cod;
+            att.CommandText = "update marca set nome = @nome where codMarca = @cod";
 
-
-        public void delete_marca(int pinto)
+        }
+        public void delete_marca(int cod)
         {
             SqlCommand add1 = new SqlCommand();
             add1.Connection = conex;
-            add1.Parameters.Add("@pinto", SqlDbType.Int).Value = pinto;
-            add1.CommandText = "delete from marca where codMarca = @pinto";
+            add1.Parameters.Add("@cod", SqlDbType.Int).Value = cod;
+            add1.CommandText = "delete from marca where codMarca = @cod";
             conex.Open();
             add1.ExecuteNonQuery();
             conex.Close();
@@ -70,14 +78,15 @@ namespace NovoProject
             add.ExecuteNonQuery();
             conex.Close();
         }
-        public DataTable updateLoja(string New, string cidade, string nome)
+        public DataTable updateLoja(int cod, string New, string cidade, string nome)
         {
             SqlCommand att = new SqlCommand();
             att.Connection = conex;
+            att.Parameters.Add("@cod", SqlDbType.Int).Value = cod;
             att.Parameters.Add("@new", SqlDbType.VarChar).Value = New;
             att.Parameters.Add("@cidade", SqlDbType.VarChar).Value = cidade;
             att.Parameters.Add("@nome", SqlDbType.VarChar).Value = nome;
-            att.CommandText = "update Loja set nome = @new, cidade = @cidade where nome = @nome";
+            att.CommandText = "update Loja set nome = @new, cidade = @cidade where codLoja = @cod";
 
             conex.Open();
             att.ExecuteNonQuery();
@@ -89,7 +98,6 @@ namespace NovoProject
 
             return table;
         }
-
         public void deleta_loja(int key)
         {
             SqlCommand add = new SqlCommand();
@@ -100,7 +108,6 @@ namespace NovoProject
             add.ExecuteNonQuery();
             conex.Close();
         }
-
         //produto
         public DataTable selectProduto()
         {
@@ -159,7 +166,6 @@ namespace NovoProject
             add.ExecuteNonQuery();
             conex.Close();
         }
-
         //universal
         public DataTable feedCombo()
         {
