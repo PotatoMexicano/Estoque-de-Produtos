@@ -23,8 +23,6 @@ namespace NovoProject
             listBox1.DataSource = control.selectMarca();
             listBox1.ValueMember = "codMarca";
             listBox1.DisplayMember = "nome";
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)

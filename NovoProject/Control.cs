@@ -40,14 +40,19 @@ namespace NovoProject
             add.ExecuteNonQuery();
             conex.Close();
         }
-        public void updateMarca(string nome, int cod)
+        public void updateMarca(int cod, string nome)
         {
             SqlCommand att = new SqlCommand();
             att.Connection = conex;
-            att.Parameters.Add("@nome", SqlDbType.VarChar).Value = nome;
             att.Parameters.Add("@cod", SqlDbType.Int).Value = cod;
+            att.Parameters.Add("@nome", SqlDbType.VarChar).Value = nome;
             att.CommandText = "update marca set nome = @nome where codMarca = @cod";
 
+            conex.Open();
+            att.ExecuteNonQuery();
+            conex.Close();
+
+            selectMarca();
         }
         public void delete_marca(int cod)
         {

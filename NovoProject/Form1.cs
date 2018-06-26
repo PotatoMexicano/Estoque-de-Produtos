@@ -84,5 +84,12 @@ namespace NovoProject
             new delete_loja().ShowDialog();
             this.Visible = true;
         }
+
+        private void marcaToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new atualiza_marca().ShowDialog();
+            this.Visible = true;
+        }
     }
 }

@@ -33,7 +33,6 @@ namespace NovoProject
             cod = Convert.ToInt32(gridAttLoja.Rows[e.RowIndex].Cells[0].Value);
             textBox1.Text = gridAttLoja.Rows[e.RowIndex].Cells[1].Value.ToString();
             textBox2.Text = gridAttLoja.Rows[e.RowIndex].Cells[2].Value.ToString();
-            MessageBox.Show(cod.ToString());
         }
 
         private void button1_Click(object sender, EventArgs e)
