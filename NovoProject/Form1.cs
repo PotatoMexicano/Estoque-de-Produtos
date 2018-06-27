@@ -91,5 +91,12 @@ namespace NovoProject
             new atualiza_marca().ShowDialog();
             this.Visible = true;
         }
+
+        private void porLojaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new pesquisa_loja_produto().ShowDialog();
+            this.Visible = true;
+        }
     }
 }

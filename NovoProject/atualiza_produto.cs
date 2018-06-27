@@ -34,17 +34,22 @@ namespace NovoProject
 
             comboBox1.SelectedValue = Convert.ToInt32(table.Rows[listBox1.SelectedIndex][4]);
         }
-        public void select() //pronto
+        public void selectLista() //pronto
         {
             table = control.selectProduto();
             listBox1.DataSource = table;
             listBox1.DisplayMember = table.Columns[0].ColumnName;
             listBox1.ValueMember = table.Columns[3].ColumnName;
 
+           
+
+        }
+        public void selectMarca()
+        {
+            table = control.selectProduto();
             comboBox1.DataSource = table;
             comboBox1.DisplayMember = table.Columns[2].ColumnName;
             comboBox1.ValueMember = table.Columns[3].ColumnName;
-
         }
 
         public void fillCombo()
@@ -63,13 +68,20 @@ namespace NovoProject
 
         private void atualiza_produto_Load(object sender, EventArgs e)
         {
-            select();
+            selectLista();
+            selectMarca();
             fillCombo();
         }
 
         private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             atualizar();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            control.updateProduto(Convert.ToInt32(textBox1.Text.ToString()),textBox2.Text.ToString(), Convert.ToDecimal(textBox3.Text.ToString()), Convert.ToInt32(comboBox1.SelectedValue.ToString()));
+            selectLista();
         }
     }
 }

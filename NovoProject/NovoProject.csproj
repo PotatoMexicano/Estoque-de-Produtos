@@ -106,6 +106,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="pesquisa_loja_produto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pesquisa_loja_produto.Designer.cs">
+      <DependentUpon>pesquisa_loja_produto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="atualiza_loja.resx">
@@ -137,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pesquisa_loja_produto.resx">
+      <DependentUpon>pesquisa_loja_produto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

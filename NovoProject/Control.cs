@@ -14,7 +14,7 @@ namespace NovoProject
         {
             //String Gabriel//  conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
             //String Kami//
-            conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Pichau\Documents\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
+            conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\16025\Desktop\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
             //conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Pichau\Documents\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         }
@@ -64,7 +64,19 @@ namespace NovoProject
             add1.ExecuteNonQuery();
             conex.Close();
         }
+
+
         //loja
+        public DataTable select_loja_prod(string id)
+        {
+            SqlCommand selectLoja = new SqlCommand();
+            selectLoja.Connection = conex;
+            selectLoja.Parameters.Add("@id", SqlDbType.VarChar).Value = id;
+            SqlDataAdapter adptor = new SqlDataAdapter("SELECT * FROM Prod_Loja WHERE codLoja = @id ", conex);
+            DataTable table = new DataTable();
+            adptor.Fill(table);
+            return table;
+        }
         public DataTable selectLoja()
         {
             SqlDataAdapter adptor = new SqlDataAdapter("select * from Loja ",conex);
@@ -113,6 +125,8 @@ namespace NovoProject
             add.ExecuteNonQuery();
             conex.Close();
         }
+
+
         //produto
         public DataTable selectProduto()
         {
@@ -140,26 +154,21 @@ namespace NovoProject
             add.ExecuteNonQuery();
             conex.Close();
         }
-        public DataTable updateProduto(int codigo, string nome, decimal preco, int marca)
+        public void updateProduto(int codigo, string nome, decimal preco, int marca)
         {
             SqlCommand att = new SqlCommand();
             att.Connection = conex;
-            att.Parameters.Add("@codigo", SqlDbType.Int).Value =codigo ;
-            att.Parameters.Add("@nome", SqlDbType.VarChar).Value = nome;
+            att.Parameters.Add("@codigo", SqlDbType.Int).Value =codigo;
+            att.Parameters.Add("@descricao", SqlDbType.VarChar).Value = nome;
             att.Parameters.Add("@preco", SqlDbType.Decimal).Value = preco;
             att.Parameters.Add("@marca", SqlDbType.Int).Value = marca;
 
-            att.CommandText = "update Loja set nome = @new, cidade = @cidade where nome = @nome";
+            att.CommandText = "update produto set descricao = @descricao, preco = @preco, codMarca = @marca where codProduto = @codigo";
 
             conex.Open();
             att.ExecuteNonQuery();
             conex.Close();
 
-            SqlDataAdapter adptor = new SqlDataAdapter("select * from Loja", conex);
-            DataTable table = new DataTable();
-            adptor.Fill(table);
-
-            return table;
         }
         public void delete_prod(int chave)
         {
@@ -171,6 +180,9 @@ namespace NovoProject
             add.ExecuteNonQuery();
             conex.Close();
         }
+
+
+
         //universal
         public DataTable feedCombo()
         {
