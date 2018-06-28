@@ -69,7 +69,7 @@ namespace NovoProject
         //loja
         public DataTable selectLoja()
         {
-            SqlDataAdapter adptor = new SqlDataAdapter("select * from Loja ", conex);
+            SqlDataAdapter adptor = new SqlDataAdapter("select codLoja,nome from Loja ", conex);
             DataTable table = new DataTable();
             adptor.Fill(table);
             return table;
@@ -197,4 +197,5 @@ namespace NovoProject
 
     }
 }
+//batata
 
