@@ -12,7 +12,7 @@ namespace NovoProject
         private SqlConnection conex;
         public Control()
         {
-            //conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Gabri\Downloads\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
+            conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Gabri\Downloads\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         }
 
@@ -65,24 +65,23 @@ namespace NovoProject
 
         //loja
 
-            //DEU ZIKA N TA FUNFANDO
-        public DataTable select_loja_prod(string id)
-        {
-            SqlCommand select = new SqlCommand();
-            select.Connection = conex;
-            select.Parameters.Add("@id", SqlDbType.VarChar).Value = id;
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Prod_Loja WHERE codLoja = @id", conex);
-                DataTable table = new DataTable();
-                adapter.Fill(table);
-                return table;           
-        }
+        //public DataTable select_loja_prod(string id)
+        //{
+        //    SqlCommand selectLoja = new SqlCommand();
+        //    selectLoja.Connection = conex;
+        //    selectLoja.Parameters.Add("@id", SqlDbType.VarChar).Value = id;
+        //    SqlDataAdapter adptor = new SqlDataAdapter("SELECT * FROM Prod_Loja WHERE codLoja = @id ", conex);
+        //    DataTable table = new DataTable();
+        //    adptor.Fill(table);
+        //    return table;
+        //}
         //DEU ZIKA
 
 
 
         public DataTable selectLoja()
         {
-            SqlDataAdapter adptor = new SqlDataAdapter("select * from Loja ",conex);
+            SqlDataAdapter adptor = new SqlDataAdapter("select * from Loja ", conex);
             DataTable table = new DataTable();
             adptor.Fill(table);
             return table;
