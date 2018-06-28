@@ -67,6 +67,21 @@ namespace NovoProject
 
 
         //loja
+
+
+        public DataTable select_loja_prod(string id)
+        {
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Prod_Loja WHERE codLoja = '"+id+"'", conex);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                return table;
+
+            
+        }
+
+
+
+
         public DataTable selectLoja()
         {
             SqlDataAdapter adptor = new SqlDataAdapter("select * from Loja ",conex);

@@ -21,21 +21,17 @@ namespace NovoProject
             selectLoja();
         }
 
-        public DataTable selectLoja()
+        public void selectLoja()
         {
             table = control.selectLoja();
             listBox1.DataSource = table;
             listBox1.DisplayMember = table.Columns[1].ColumnName;
             listBox1.ValueMember = table.Columns[0].ColumnName;
-            return table;
         }
         public void select_Dados_Loja_prod()
         {
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            select_Dados_Loja_prod();
+            table2 = control.select_loja_prod(listBox1.SelectedValue.ToString());
+            dataGridView1.DataSource = table2;
         }
     }
 }
