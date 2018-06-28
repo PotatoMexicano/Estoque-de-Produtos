@@ -12,10 +12,7 @@ namespace NovoProject
         private SqlConnection conex;
         public Control()
         {
-            //String Gabriel//  conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
-            //String Kami//
-            conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Gabri\Downloads\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
-            //conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Pichau\Documents\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
+            //conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Gabri\Downloads\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         }
 
@@ -68,17 +65,18 @@ namespace NovoProject
 
         //loja
 
-
+            //DEU ZIKA N TA FUNFANDO
         public DataTable select_loja_prod(string id)
         {
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Prod_Loja WHERE codLoja = '"+id+"'", conex);
+            SqlCommand select = new SqlCommand();
+            select.Connection = conex;
+            select.Parameters.Add("@id", SqlDbType.VarChar).Value = id;
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Prod_Loja WHERE codLoja = @id", conex);
                 DataTable table = new DataTable();
                 adapter.Fill(table);
-                return table;
-
-            
+                return table;           
         }
-
+        //DEU ZIKA
 
 
 
