@@ -15,7 +15,7 @@ namespace NovoProject
         public Control()
         {
             //conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Pichau\Documents\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30
-            conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Gabri\Downloads\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
+            //conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Gabri\Downloads\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         }
 
@@ -69,7 +69,7 @@ namespace NovoProject
         //loja
         public DataTable selectLoja()
         {
-            SqlDataAdapter adptor = new SqlDataAdapter("select codLoja,nome from Loja ", conex);
+            SqlDataAdapter adptor = new SqlDataAdapter("select * from Loja ", conex);
             DataTable table = new DataTable();
             adptor.Fill(table);
             return table;
