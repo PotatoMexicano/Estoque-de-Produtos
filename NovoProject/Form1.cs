@@ -95,7 +95,7 @@ namespace NovoProject
         private void porLojaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            new pesquisa_loja_produto().ShowDialog();
+            new visualizador_produto_loja().ShowDialog();
             this.Visible = true;
         }
     }

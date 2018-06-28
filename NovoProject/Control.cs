@@ -10,9 +10,12 @@ namespace NovoProject
     class Control
     {
         private SqlConnection conex;
+
+        //IF YOU CHANGE IT, YOU WILL DIE
         public Control()
         {
-            conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Pichau\Documents\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
+            //conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Pichau\Documents\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30
+            conex = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Gabri\Downloads\ExercicioDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         }
 
@@ -66,7 +69,7 @@ namespace NovoProject
         //loja
         public DataTable selectLoja()
         {
-            SqlDataAdapter adptor = new SqlDataAdapter("select * from Loja ", conex);
+            SqlDataAdapter adptor = new SqlDataAdapter("select codLoja,nome from Loja ", conex);
             DataTable table = new DataTable();
             adptor.Fill(table);
             return table;
@@ -166,6 +169,16 @@ namespace NovoProject
             conex.Open();
             add.ExecuteNonQuery();
             conex.Close();
+        }
+
+        //SE COLOCAR DE PÉ FICA MAIS ALTO QUE O burj khalifa
+        public DataTable select_produto_loja(string id)
+        {
+            SqlDataAdapter adapter;
+            adapter = new SqlDataAdapter("SELECT prod.codProduto as Codigo,qtdEstoque as Estoque,cidade as Cidade,L.nome as Cidade, M.nome as Marca FROM Prod_Loja as PL join Loja as L on PL.codLoja = "+id+" and L.codLoja = "+id+" join produto as prod on prod.codProduto = PL.codProduto join marca as M on m.codMarca = prod.codMarca ", conex);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
         }
 
 

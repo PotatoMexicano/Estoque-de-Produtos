@@ -36,12 +36,11 @@ namespace NovoProject
         }
         public void selectLista() //pronto
         {
+            
             table = control.selectProduto();
             listBox1.DataSource = table;
             listBox1.DisplayMember = table.Columns[0].ColumnName;
             listBox1.ValueMember = table.Columns[3].ColumnName;
-
-           
 
         }
         public void selectMarca()
