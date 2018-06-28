@@ -29,12 +29,8 @@ namespace NovoProject
             listBox1.ValueMember = table.Columns[0].ColumnName;
             return table;
         }
-        public DataTable select_Dados_Loja_prod()
+        public void select_Dados_Loja_prod()
         {
-            table2 = control.select_loja_prod(listBox1.SelectedValue.ToString());
-            dataGridView1.DataSource = table2;
-            return table2;
-
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
